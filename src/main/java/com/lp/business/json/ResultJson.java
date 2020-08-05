@@ -1,4 +1,6 @@
-package com.model.json;
+package com.lp.business.json;
+
+import com.lp.business.enums.CodeEnum;
 
 import java.io.Serializable;
 
@@ -23,5 +25,25 @@ public class ResultJson<T> implements Serializable {
         this.resultCode = resultCode;
         this.resultMesg = resultMesg;
         this.data = data;
+    }
+
+    public static ResultJson success(Object data) {
+        return new ResultJson<>(successCode,successMessage,data);
+    }
+
+    public static ResultJson json(CodeEnum codeEnum,Object data) {
+        return new ResultJson<>(codeEnum.getCode(),codeEnum.getMessage(),data);
+    }
+
+    public String getResultCode() {
+        return resultCode;
+    }
+
+    public String getResultMesg() {
+        return resultMesg;
+    }
+
+    public T getData() {
+        return data;
     }
 }

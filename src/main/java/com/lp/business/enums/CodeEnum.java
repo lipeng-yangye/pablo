@@ -1,4 +1,4 @@
-package com.enums;
+package com.lp.business.enums;
 /**
  * 系统异常回参枚举值
  */

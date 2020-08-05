@@ -1,0 +1,3 @@
+logging:
+  level:
+    com.lp.business.dao: DEBUG
